@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/user-stripe-infos",
+      "handler": "user-stripe-info.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/user-stripe-infos/count",
+      "handler": "user-stripe-info.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/user-stripe-infos/:id",
+      "handler": "user-stripe-info.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/user-stripe-infos",
+      "handler": "user-stripe-info.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/user-stripe-infos/:id",
+      "handler": "user-stripe-info.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/user-stripe-infos/:id",
+      "handler": "user-stripe-info.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

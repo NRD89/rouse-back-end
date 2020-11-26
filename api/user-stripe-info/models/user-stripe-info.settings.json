@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_stripe_infos",
+  "info": {
+    "name": "User Stripe Info"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "stripeId": {
+      "type": "string"
+    },
+    "stripeSubId": {
+      "type": "string"
+    },
+    "users_permissions_user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "user_stripe_info"
+    }
+  }
+}
