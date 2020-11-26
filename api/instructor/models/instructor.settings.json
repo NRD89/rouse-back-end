@@ -39,6 +39,23 @@
     },
     "Content": {
       "type": "richtext"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "indexIntro": {
+      "type": "text"
+    },
+    "avatar": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }
