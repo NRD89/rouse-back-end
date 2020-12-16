@@ -56,6 +56,14 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "classes": {
+      "via": "instructor",
+      "collection": "classes"
+    },
+    "vods": {
+      "via": "instructors",
+      "collection": "vod"
     }
   }
 }

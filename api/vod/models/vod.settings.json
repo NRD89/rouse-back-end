@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vods",
+  "info": {
+    "name": "VOD",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "instructors": {
+      "collection": "instructor",
+      "via": "vods",
+      "dominant": true
+    },
+    "Slug": {
+      "type": "uid"
+    },
+    "streamID": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string"
+    }
+  }
+}
