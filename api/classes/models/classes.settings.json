@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "classes",
+  "info": {
+    "name": "Classes",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "instructor": {
+      "model": "instructor",
+      "via": "classes"
+    },
+    "style": {
+      "type": "enumeration",
+      "enum": [
+        "Vinyasa",
+        "Meditation",
+        "Yin",
+        "Hatha",
+        "Restorative",
+        "Ashtanga"
+      ]
+    },
+    "level": {
+      "type": "enumeration",
+      "enum": [
+        "one",
+        "two",
+        "three"
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "date": {
+      "type": "date"
+    },
+    "time": {
+      "type": "time"
+    }
+  }
+}

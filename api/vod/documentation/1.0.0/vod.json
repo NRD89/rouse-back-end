@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/instructors": {
+    "/vods": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Instructor"
+                    "$ref": "#/components/schemas/Vod"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Instructor"
+          "Vod"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Instructor"
+                  "$ref": "#/components/schemas/Vod"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Instructor"
+          "Vod"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewInstructor"
+                "$ref": "#/components/schemas/NewVod"
               }
             }
           }
         }
       }
     },
-    "/instructors/count": {
+    "/vods/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Instructor"
+          "Vod"
         ],
         "parameters": []
       }
     },
-    "/instructors/{id}": {
+    "/vods/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Instructor"
+                  "$ref": "#/components/schemas/Vod"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Instructor"
+          "Vod"
         ],
         "parameters": [
           {
@@ -383,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Instructor"
+                  "$ref": "#/components/schemas/Vod"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Instructor"
+          "Vod"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewInstructor"
+                "$ref": "#/components/schemas/NewVod"
               }
             }
           }
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Instructor"
+          "Vod"
         ],
         "parameters": [
           {
@@ -514,298 +514,60 @@
   },
   "components": {
     "schemas": {
-      "Instructor": {
+      "Vod": {
         "required": [
-          "id",
-          "Slug"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "Slug": {
-            "type": "uid"
-          },
-          "Image": {
-            "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "Video": {
+          "instructors": {
             "type": "array",
             "items": {
               "required": [
                 "id",
-                "name",
-                "hash",
-                "mime",
-                "size",
-                "url",
-                "provider"
+                "Slug"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "name": {
+                "Slug": {
+                  "type": "uid"
+                },
+                "Image": {
                   "type": "string"
                 },
-                "alternativeText": {
-                  "type": "string"
-                },
-                "caption": {
-                  "type": "string"
-                },
-                "width": {
-                  "type": "integer"
-                },
-                "height": {
-                  "type": "integer"
-                },
-                "formats": {
-                  "type": "object"
-                },
-                "hash": {
-                  "type": "string"
-                },
-                "ext": {
-                  "type": "string"
-                },
-                "mime": {
-                  "type": "string"
-                },
-                "size": {
-                  "type": "number"
-                },
-                "url": {
-                  "type": "string"
-                },
-                "previewUrl": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "provider_metadata": {
-                  "type": "object"
-                },
-                "related": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "Content": {
-            "type": "string"
-          },
-          "Title": {
-            "type": "string"
-          },
-          "indexIntro": {
-            "type": "string"
-          },
-          "avatar": {
-            "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "classes": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "Title": {
-                  "type": "string"
-                },
-                "instructor": {
-                  "type": "string"
-                },
-                "style": {
-                  "type": "string"
-                },
-                "level": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "date": {
-                  "type": "string"
-                },
-                "time": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "vods": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "instructors": {
+                "Video": {
                   "type": "array",
                   "items": {
                     "type": "string"
                   }
                 },
-                "Slug": {
-                  "type": "uid"
-                },
-                "streamID": {
+                "Content": {
                   "type": "string"
                 },
-                "duration": {
+                "Title": {
                   "type": "string"
+                },
+                "indexIntro": {
+                  "type": "string"
+                },
+                "avatar": {
+                  "type": "string"
+                },
+                "classes": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "vods": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "published_at": {
                   "type": "string"
@@ -818,6 +580,15 @@
                 }
               }
             }
+          },
+          "Slug": {
+            "type": "uid"
+          },
+          "streamID": {
+            "type": "string"
+          },
+          "duration": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -825,34 +596,22 @@
           }
         }
       },
-      "NewInstructor": {
-        "required": [
-          "Slug"
-        ],
+      "NewVod": {
         "properties": {
+          "instructors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
           "Slug": {
             "type": "uid"
           },
-          "Content": {
+          "streamID": {
             "type": "string"
           },
-          "Title": {
+          "duration": {
             "type": "string"
-          },
-          "indexIntro": {
-            "type": "string"
-          },
-          "classes": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "vods": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "published_at": {
             "type": "string",
@@ -870,7 +629,7 @@
   },
   "tags": [
     {
-      "name": "Instructor"
+      "name": "Vod"
     }
   ]
 }

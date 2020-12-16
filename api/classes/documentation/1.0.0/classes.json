@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/instructors": {
+    "/classes": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the classes's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve classes document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Instructor"
+                    "$ref": "#/components/schemas/Classes"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Instructor"
+          "Classes"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Create a new classes record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve classes document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Instructor"
+                  "$ref": "#/components/schemas/Classes"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Instructor"
+          "Classes"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewInstructor"
+                "$ref": "#/components/schemas/NewClasses"
               }
             }
           }
         }
       }
     },
-    "/instructors/count": {
+    "/classes/count": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve the numver of classes documents",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve classes document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Instructor"
+          "Classes"
         ],
         "parameters": []
       }
     },
-    "/instructors/{id}": {
+    "/classes/{id}": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find one classes record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve classes document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Instructor"
+                  "$ref": "#/components/schemas/Classes"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Instructor"
+          "Classes"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single classes record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve classes document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Instructor"
+                  "$ref": "#/components/schemas/Classes"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Instructor"
+          "Classes"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewInstructor"
+                "$ref": "#/components/schemas/NewClasses"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single classes record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single classes based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Instructor"
+          "Classes"
         ],
         "parameters": [
           {
@@ -514,221 +514,63 @@
   },
   "components": {
     "schemas": {
-      "Instructor": {
+      "Classes": {
         "required": [
-          "id",
-          "Slug"
+          "id"
         ],
         "properties": {
           "id": {
             "type": "string"
           },
-          "Slug": {
-            "type": "uid"
-          },
-          "Image": {
-            "required": [
-              "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "alternativeText": {
-                "type": "string"
-              },
-              "caption": {
-                "type": "string"
-              },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
-                "type": "string"
-              },
-              "ext": {
-                "type": "string"
-              },
-              "mime": {
-                "type": "string"
-              },
-              "size": {
-                "type": "number"
-              },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
-                "type": "string"
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "Video": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "name",
-                "hash",
-                "mime",
-                "size",
-                "url",
-                "provider"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "alternativeText": {
-                  "type": "string"
-                },
-                "caption": {
-                  "type": "string"
-                },
-                "width": {
-                  "type": "integer"
-                },
-                "height": {
-                  "type": "integer"
-                },
-                "formats": {
-                  "type": "object"
-                },
-                "hash": {
-                  "type": "string"
-                },
-                "ext": {
-                  "type": "string"
-                },
-                "mime": {
-                  "type": "string"
-                },
-                "size": {
-                  "type": "number"
-                },
-                "url": {
-                  "type": "string"
-                },
-                "previewUrl": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "provider_metadata": {
-                  "type": "object"
-                },
-                "related": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "Content": {
-            "type": "string"
-          },
           "Title": {
             "type": "string"
           },
-          "indexIntro": {
-            "type": "string"
-          },
-          "avatar": {
+          "instructor": {
             "required": [
               "id",
-              "name",
-              "hash",
-              "mime",
-              "size",
-              "url",
-              "provider"
+              "Slug"
             ],
             "properties": {
               "id": {
                 "type": "string"
               },
-              "name": {
+              "Slug": {
+                "type": "uid"
+              },
+              "Image": {
                 "type": "string"
               },
-              "alternativeText": {
+              "Video": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "Content": {
                 "type": "string"
               },
-              "caption": {
+              "Title": {
                 "type": "string"
               },
-              "width": {
-                "type": "integer"
-              },
-              "height": {
-                "type": "integer"
-              },
-              "formats": {
-                "type": "object"
-              },
-              "hash": {
+              "indexIntro": {
                 "type": "string"
               },
-              "ext": {
+              "avatar": {
                 "type": "string"
               },
-              "mime": {
-                "type": "string"
+              "classes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
-              "size": {
-                "type": "number"
+              "vods": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
-              "url": {
-                "type": "string"
-              },
-              "previewUrl": {
-                "type": "string"
-              },
-              "provider": {
-                "type": "string"
-              },
-              "provider_metadata": {
-                "type": "object"
-              },
-              "related": {
+              "published_at": {
                 "type": "string"
               },
               "created_by": {
@@ -739,85 +581,34 @@
               }
             }
           },
-          "classes": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "Title": {
-                  "type": "string"
-                },
-                "instructor": {
-                  "type": "string"
-                },
-                "style": {
-                  "type": "string"
-                },
-                "level": {
-                  "type": "string"
-                },
-                "description": {
-                  "type": "string"
-                },
-                "date": {
-                  "type": "string"
-                },
-                "time": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "style": {
+            "type": "string",
+            "enum": [
+              "Vinyasa",
+              "Meditation",
+              "Yin",
+              "Hatha",
+              "Restorative",
+              "Ashtanga"
+            ]
           },
-          "vods": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "instructors": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
-                "Slug": {
-                  "type": "uid"
-                },
-                "streamID": {
-                  "type": "string"
-                },
-                "duration": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "level": {
+            "type": "string",
+            "enum": [
+              "one",
+              "two",
+              "three"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "time": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -825,34 +616,42 @@
           }
         }
       },
-      "NewInstructor": {
-        "required": [
-          "Slug"
-        ],
+      "NewClasses": {
         "properties": {
-          "Slug": {
-            "type": "uid"
-          },
-          "Content": {
-            "type": "string"
-          },
           "Title": {
             "type": "string"
           },
-          "indexIntro": {
+          "instructor": {
             "type": "string"
           },
-          "classes": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "style": {
+            "type": "string",
+            "enum": [
+              "Vinyasa",
+              "Meditation",
+              "Yin",
+              "Hatha",
+              "Restorative",
+              "Ashtanga"
+            ]
           },
-          "vods": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "level": {
+            "type": "string",
+            "enum": [
+              "one",
+              "two",
+              "three"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "time": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -870,7 +669,7 @@
   },
   "tags": [
     {
-      "name": "Instructor"
+      "name": "Classes"
     }
   ]
 }
