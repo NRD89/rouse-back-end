@@ -17,9 +17,9 @@
       "type": "string"
     },
     "users_permissions_user": {
+      "via": "user_stripe_info",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "user_stripe_info"
+      "model": "user"
     }
   }
 }

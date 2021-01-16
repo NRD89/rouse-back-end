@@ -590,6 +590,9 @@
               "user_stripe_info": {
                 "type": "string"
               },
+              "hasHadTrial": {
+                "type": "boolean"
+              },
               "created_by": {
                 "type": "string"
               },
