@@ -1287,6 +1287,10 @@
                 "type": "string"
               }
             }
+          },
+          "hasHadTrial": {
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -1340,6 +1344,10 @@
           },
           "user_stripe_info": {
             "type": "string"
+          },
+          "hasHadTrial": {
+            "type": "boolean",
+            "default": false
           },
           "created_by": {
             "type": "string"

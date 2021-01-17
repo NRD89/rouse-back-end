@@ -69,8 +69,12 @@
       "type": "string"
     },
     "user_stripe_info": {
-      "via": "users_permissions_user",
-      "model": "user-stripe-info"
+      "model": "user-stripe-info",
+      "via": "users_permissions_user"
+    },
+    "hasHadTrial": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
